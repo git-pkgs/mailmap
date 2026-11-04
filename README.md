@@ -35,7 +35,7 @@ func main() {
 
 `Parse` accepts an `io.Reader`, including an open `.mailmap` file. `New()` creates an empty map; empty, zero-value, and nil maps return identities unchanged.
 
-Matching ignores case for names and email addresses, and entries matching both take priority over entries matching only email. The first matching entry in each group wins; unmatched identities are returned unchanged.
+Matching ignores case for names and email addresses, and entries matching both take priority over entries matching only email. The last matching entry in each group wins; unmatched identities are returned unchanged.
 
 Blank lines, comments starting with `#`, and malformed entries are skipped. Reader errors and lines exceeding the default `bufio.Scanner` token limit return an error along with the entries parsed so far.
 

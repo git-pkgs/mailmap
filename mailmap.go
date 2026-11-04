@@ -151,7 +151,8 @@ func (m *Mailmap) Resolve(name, email string) (string, string) {
 	nameLower := strings.ToLower(name)
 
 	// First try full matches (name + email) - these are more specific
-	for _, e := range m.fullMatches {
+	for i := len(m.fullMatches) - 1; i >= 0; i-- {
+		e := m.fullMatches[i]
 		if strings.ToLower(e.commitEmail) == emailLower &&
 			strings.ToLower(e.commitName) == nameLower {
 			resultName := name
@@ -163,7 +164,8 @@ func (m *Mailmap) Resolve(name, email string) (string, string) {
 	}
 
 	// Then try email-only matches
-	for _, e := range m.emailMatches {
+	for i := len(m.emailMatches) - 1; i >= 0; i-- {
+		e := m.emailMatches[i]
 		if strings.ToLower(e.commitEmail) == emailLower {
 			resultName := name
 			if e.properName != "" {

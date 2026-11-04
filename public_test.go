@@ -46,8 +46,8 @@ Too Many <one@example.com> <two@example.com> <three@example.com>
 		wantName, wantEmail string
 	}{
 		{"jane", "jane@laptop.(none)", "Jane Doe", "jane@example.com"},
-		{"JANE", "BUILDER@WORKSTATION.(NONE)", "Jane Doe", "jane@example.com"},
-		{"Other", "builder@workstation.(none)", "Build Team", "build@example.com"},
+		{"JANE", "BUILDER@WORKSTATION.(NONE)", "Later Name", "later@example.com"},
+		{"Other", "builder@workstation.(none)", "Later Team", "later-team@example.com"},
 		{"Old Name", "OLD@EXAMPLE.COM", "Old Name", "new@example.com"},
 		{"sam", "sam@example.com", "Sam Developer", "sam@example.com"},
 		{"New Contributor", "new-contributor@example.com", "New Contributor", "new-contributor@example.com"},
